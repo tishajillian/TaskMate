@@ -57,7 +57,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             size="lg"
-            className="px-8 py-6 text-base font-semibold text-white bg-gray-900 hover:bg-black dark:bg-white dark:text-black dark:hover:bg-gray-100 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            className="px-8 py-6 text-base font-semibold text-white bg-gray-900 hover:bg-black dark:bg-white dark:text-black dark:hover:bg-gray-100 cursor-pointer rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
           >
             Get Started
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -66,7 +66,7 @@ export default function Hero() {
           <Button
             size="lg"
             variant="outline"
-            className="px-8 py-6 text-base font-semibold rounded-full border-2 border-gray-300 dark:border-gray-600 hover:border-gray-900 dark:hover:border-white hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-200"
+            className="px-8 py-6 text-base font-semibold cursor-pointer rounded-full border-2 border-gray-300 dark:border-gray-600 hover:border-gray-900 dark:hover:border-white hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-200"
           >
             Learn More
           </Button>
