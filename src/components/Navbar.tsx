@@ -1,33 +1,32 @@
-'use client'
+"use client"
 
-import React, { useState } from 'react'
-import Image from 'next/image'
-import { useTheme } from '@/context/ThemeContext'
-import { Menu, Moon, SunDim, X } from 'lucide-react'
-import { Button } from './ui/button'
-import { cn } from '@/lib/utils'
+import { useState } from "react"
+import Image from "next/image"
+import { useTheme } from "@/context/ThemeContext"
+import { Menu, Moon, SunDim, X } from "lucide-react"
+import { Button } from "./ui/button"
+import { cn } from "@/lib/utils"
 
-const Navbar = () => {
+const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Features", href: "#features" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
+]
+
+export default function Navbar() {
     const { theme, toggleTheme } = useTheme()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-    const navLinks = [
-        { name: 'Home', href: '#home' },
-        { name: 'Features', href: '#features' },
-        { name: 'About', href: '#about' },
-        { name: 'Contact', href: '#contact' },
-    ]
 
     return (
         <nav className="sticky top-4 z-50 px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
-                {/* Floating pill-shaped container */}
+
                 <div className={cn(
                     "relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 rounded-2xl",
                     !mobileMenuOpen && "rounded-full"
                 )}>
                     <div className="flex items-center justify-between px-6 py-4">
-                        {/* Logo */}
                         <div className="flex items-center">
                             <a href="#" className="flex items-center group">
                                 <div className="h-8 flex items-center justify-center transition-transform group-hover:scale-105">
@@ -42,43 +41,38 @@ const Navbar = () => {
                             </a>
                         </div>
 
-                        {/* Desktop Navigation Links */}
                         <div className="hidden md:flex items-center space-x-1">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 rounded-full hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                                    className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
                                 >
                                     {link.name}
                                 </a>
                             ))}
                         </div>
 
-                        {/* Right side: Theme Toggle + CTA Button */}
                         <div className="flex items-center space-x-3">
-                            {/* Theme Toggle Button */}
                             <Button
                                 onClick={toggleTheme}
-                                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 cursor-pointer"
+                                className="p-2 rounded-full bg-gray-700 hover:bg-gray-500 transition-all duration-200 cursor-pointer"
                                 aria-label="Toggle theme"
                             >
-                                {theme === 'light' ? (
+                                {theme === "light" ? (
                                     <Moon className="text-white" />
                                 ) : (
-                                    <SunDim className="text-yellow-400" />
+                                    <SunDim className="text-yellow-300" />
                                 )}
                             </Button>
 
-                            {/* CTA Button - Hidden on mobile */}
                             <a
                                 href="#get-started"
-                                className="hidden sm:inline-flex items-center px-5 py-2 text-sm font-medium text-white bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+                                className="hidden sm:inline-flex items-center px-5 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-black dark:bg-white dark:text-black dark:hover:bg-gray-100 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
                             >
                                 Get Started
                             </a>
 
-                            {/* Mobile menu button */}
                             <Button
                                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                                 className="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 cursor-pointer"
@@ -93,8 +87,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Mobile Menu */}
-                    <div 
+                    <div
                         className="mobile-menu md:hidden"
                         data-open={mobileMenuOpen}
                     >
@@ -105,7 +98,7 @@ const Navbar = () => {
                                         <a
                                             key={link.name}
                                             href={link.href}
-                                            className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 rounded-full hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                                            className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
                                             onClick={() => setMobileMenuOpen(false)}
                                         >
                                             {link.name}
@@ -113,7 +106,7 @@ const Navbar = () => {
                                     ))}
                                     <a
                                         href="#get-started"
-                                        className="block text-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full shadow-md mt-2 hover:shadow-lg transition-all duration-200"
+                                        className="block text-center px-4 py-2 text-sm font-medium text-white bg-gray-900 dark:bg-white dark:text-black rounded-full shadow-md mt-2 hover:shadow-lg transition-all duration-200"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
                                         Get Started
@@ -127,5 +120,3 @@ const Navbar = () => {
         </nav>
     )
 }
-
-export default Navbar
