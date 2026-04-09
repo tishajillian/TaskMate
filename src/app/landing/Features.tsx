@@ -20,7 +20,10 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
+    <section
+      id="features"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black"
+    >
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-16">

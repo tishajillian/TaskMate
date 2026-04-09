@@ -4,13 +4,16 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-100px)] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-[calc(100vh-100px)] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
 
       <div className="absolute inset-0 bg-linear-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-gray-950 dark:to-gray-900" />
-      
+
       <div className="absolute top-20 left-10 w-72 h-72 bg-gray-200/20 dark:bg-gray-700/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-gray-300/20 dark:bg-gray-600/10 rounded-full blur-3xl" />
-      
+
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300/50 dark:border-gray-700/50 shadow-sm">
           <Sparkles className="w-4 h-4 text-gray-900 dark:text-gray-100" />
@@ -31,7 +34,7 @@ export default function Hero() {
             with Your AI Task Companion
           </span>
         </h1>
-        
+
         <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
           Automated workflows and intelligent task management designed for{" "}
           <span className="font-semibold text-gray-900 dark:text-white">
@@ -62,7 +65,7 @@ export default function Hero() {
             Get Started
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
-          
+
           <Button
             size="lg"
             variant="outline"

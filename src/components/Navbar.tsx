@@ -6,12 +6,13 @@ import { useTheme } from "@/context/ThemeContext"
 import { Menu, Moon, SunDim, X } from "lucide-react"
 import { Button } from "./ui/button"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Features", href: "#features" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Features", href: "/#features" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
 ]
 
 export default function Navbar() {
@@ -28,7 +29,7 @@ export default function Navbar() {
                 )}>
                     <div className="flex items-center justify-between px-6 py-4">
                         <div className="flex items-center">
-                            <a href="#" className="flex items-center group">
+                            <Link href="/" className="flex items-center group">
                                 <div className="h-8 flex items-center justify-center transition-transform group-hover:scale-105">
                                     <Image
                                         src="/TaskMate.svg"
@@ -38,18 +39,18 @@ export default function Navbar() {
                                         className="dark:invert"
                                     />
                                 </div>
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="hidden md:flex items-center space-x-1">
                             {navLinks.map((link) => (
-                                <a
+                                <Link
                                     key={link.name}
                                     href={link.href}
                                     className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
                                 >
                                     {link.name}
-                                </a>
+                                </Link>
                             ))}
                         </div>
 
@@ -66,12 +67,12 @@ export default function Navbar() {
                                 )}
                             </Button>
 
-                            <a
-                                href="#get-started"
+                            <Link
+                                href="/get-started"
                                 className="hidden sm:inline-flex items-center px-5 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-black dark:bg-white dark:text-black dark:hover:bg-gray-100 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
                             >
                                 Get Started
-                            </a>
+                            </Link>
 
                             <Button
                                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -95,22 +96,22 @@ export default function Navbar() {
                             <div className="border-t border-gray-200/50 dark:border-gray-700/50 pt-3 pb-4 px-4">
                                 <div className="space-y-1">
                                     {navLinks.map((link) => (
-                                        <a
+                                        <Link
                                             key={link.name}
                                             href={link.href}
                                             className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
                                             onClick={() => setMobileMenuOpen(false)}
                                         >
                                             {link.name}
-                                        </a>
+                                        </Link>
                                     ))}
-                                    <a
-                                        href="#get-started"
+                                    <Link
+                                        href="/get-started"
                                         className="block text-center px-4 py-2 text-sm font-medium text-white bg-gray-900 dark:bg-white dark:text-black rounded-full shadow-md mt-2 hover:shadow-lg transition-all duration-200"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
                                         Get Started
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
