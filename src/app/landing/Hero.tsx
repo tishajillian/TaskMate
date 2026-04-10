@@ -8,9 +8,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-[calc(100vh-100px)] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
-
-      <div className="absolute inset-0 bg-linear-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-gray-950 dark:to-gray-900" />
-
+      
       <div className="absolute top-20 left-10 w-72 h-72 bg-gray-200/20 dark:bg-gray-700/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-gray-300/20 dark:bg-gray-600/10 rounded-full blur-3xl" />
 
